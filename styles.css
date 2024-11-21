@@ -1,0 +1,131 @@
+/* Configuración general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6e6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Corazón grande */
+.heart {
+    font-size: 50px;
+    color: #ff6b6b;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite;
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+.heart:hover {
+    transform: scale(1.1);
+}
+
+/* Animación de latidos */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Contenedor de fotos */
+.photos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Fotos */
+.photo img {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #ff6b6b;
+    border-radius: 10px;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* Animación flotante */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Clase oculta */
+.hidden {
+    display: none;
+}
+
+/* Media Queries para responsive */
+
+/* Pantallas pequeñas (teléfonos) */
+@media screen and (max-width: 600px) {
+    .heart {
+        font-size: 40px;
+    }
+
+    .photo img {
+        width: 100px;
+        height: 100px;
+        border: 3px solid #ff6b6b;
+    }
+
+    .photos-container {
+        gap: 10px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+}
+
+/* Pantallas medianas (tabletas) */
+@media screen and (max-width: 1024px) {
+    .heart {
+        font-size: 45px;
+    }
+
+    .photo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .photos-container {
+        gap: 12px;
+    }
+    .title {
+        font-size: 20px;
+    }
+}
